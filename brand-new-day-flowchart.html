@@ -1,0 +1,326 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>『スパイダーマン：ブランド・ニュー・デイ』視聴フローチャート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#070B14; --ink2:#101A2E; --ink3:#16233D;
+  --silk:#E9EEF9; --dim:#93A0BC; --web:#25314D;
+  --spidey:#D4213A; --main:#3D74E8; --legacy:#9B6BE8;
+  --newav:#17A9BC; --street:#E08A2A; --hulk:#78879F;
+  --gold:#F0C24B;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--ink);color:var(--silk);
+  font-family:"Zen Kaku Gothic New",system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 0}
+.eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.24em;color:var(--spidey);margin:0 0 12px}
+h1{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(24px,4.4vw,40px);line-height:1.3;margin:0}
+.lede{color:var(--dim);font-size:13.5px;max-width:66ch;margin:16px 0 0;line-height:1.8}
+.howto{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0;font-size:12px;color:var(--dim)}
+.howto b{color:var(--silk);font-weight:700}
+
+.bar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:24px 0 12px}
+.seg{display:flex;border:1px solid var(--web);border-radius:999px;overflow:hidden}
+.seg button,.gbtn{background:transparent;border:0;color:var(--dim);font-family:inherit;font-size:12.5px;
+  padding:7px 14px;cursor:pointer;transition:.15s;white-space:nowrap}
+.seg button:hover,.gbtn:hover{color:var(--silk)}
+.seg button[aria-pressed="true"]{background:var(--spidey);color:#fff}
+.gbtn{border:1px solid var(--web);border-radius:999px}
+.zoom{margin-left:auto;display:flex;gap:6px;align-items:center;font-size:12px;color:var(--dim)}
+.zoom button{width:30px;height:30px;border-radius:8px;border:1px solid var(--web);background:transparent;
+  color:var(--dim);cursor:pointer;font-size:15px;line-height:1}
+.zoom button:hover{color:var(--silk)}
+button:focus-visible{outline:2px solid var(--main);outline-offset:2px}
+
+.lines{display:flex;flex-wrap:wrap;gap:7px 16px;font-size:12px;color:var(--dim);margin:0 0 14px}
+.lines span{display:flex;align-items:center;gap:7px}
+.lines i{width:16px;height:3px;border-radius:2px}
+
+.viewport{border:1px solid var(--web);border-radius:14px;background:
+  radial-gradient(circle at 1px 1px,#16203400 1px,transparent 0) ,#080D18;
+  overflow:auto;cursor:grab;-webkit-overflow-scrolling:touch}
+.viewport.drag{cursor:grabbing}
+.stagewrap{transform-origin:0 0;position:relative}
+#stage{position:relative}
+svg.edges{position:absolute;inset:0;overflow:visible}
+svg.edges path{fill:none;stroke-width:1.6;opacity:.62;transition:opacity .18s,stroke-width .18s}
+svg.edges path.on{opacity:1;stroke-width:3}
+body.dimming svg.edges path{opacity:.12}
+body.dimming svg.edges path.on{opacity:1}
+
+.card{position:absolute;background:var(--ink2);border:1px solid var(--web);border-left-width:4px;
+  border-radius:9px;padding:8px 10px;transition:background .16s,transform .16s,opacity .16s;cursor:default}
+.card:hover{background:var(--ink3);transform:translateY(-1px)}
+.card .t{font-size:11.8px;font-weight:700;line-height:1.42;letter-spacing:.01em}
+.card .m{display:flex;gap:6px;align-items:center;margin-top:4px}
+.card .y{font-family:"Space Mono",monospace;font-size:10px;color:var(--dim)}
+.card .tier{font-size:9.5px;padding:0 6px;border-radius:999px;border:1px solid currentColor;line-height:15px}
+.tier.must{color:var(--spidey)} .tier.rec{color:var(--main)} .tier.opt{color:var(--hulk)}
+.card.opt{border-style:dashed;border-left-style:solid}
+.card.opt .t{color:#B9C4DA}
+body.dimming .card{opacity:.22}
+body.dimming .card.on{opacity:1}
+.card.faded{opacity:.16;filter:saturate(.2)}
+
+.goal{background:linear-gradient(150deg,#2A0E16,#12172B);border:1px solid var(--spidey);border-left-width:4px;
+  box-shadow:0 0 0 4px rgba(212,33,58,.09)}
+.goal .t{font-family:"Shippori Mincho B1",serif;font-size:14.5px;line-height:1.4}
+
+footer{color:#39435A;font-size:11.5px;line-height:1.9;padding:22px 0 70px;max-width:70ch}
+@media (max-width:640px){ .wrap{padding:28px 12px 0} .zoom{margin-left:0} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Viewing Flow / left → right</p>
+  <h1>ブランド・ニュー・デイまでの視聴フロー</h1>
+  <p class="lede">左が古い前提、右がゴール。矢印は「これを観てから、こっちへ」の向きです。６本の系統が最後に一点へ合流します。カードにカーソルを合わせると、その作品につながる線だけが浮かび上がります。</p>
+  <div class="howto">
+    <span><b>実線＝必須・推奨</b></span>
+    <span><b>破線＝任意</b>（世界観の補完）</span>
+    <span><b>ドラッグ</b>で移動、<b>ホイール</b>で無段階ズーム</span>
+  </div>
+
+  <div class="bar">
+    <div class="seg" role="group" aria-label="重要度で絞り込む">
+      <button data-lv="must">必須だけ</button>
+      <button data-lv="rec">推奨まで</button>
+      <button data-lv="opt" aria-pressed="true">すべて</button>
+    </div>
+    <button class="gbtn" id="fit">全体を表示</button>
+    <div class="zoom"><button id="out" aria-label="縮小">−</button><span id="pct">55%</span><button id="in" aria-label="拡大">＋</button></div>
+  </div>
+
+  <div class="lines" id="lines"></div>
+  <div class="viewport" id="vp"><div class="stagewrap" id="sw"><div id="stage"></div></div></div>
+
+  <footer>
+    系統の色は物語のつながりを示すもので、公開順ではありません。年号は各作品の初公開・初配信年です。<br>
+    配信サービスのラインナップは入れ替わるため、視聴前に各サービスで確認してください。
+  </footer>
+</div>
+
+<script>
+const LINES = {
+  main:  {c:"#3D74E8", n:"インフィニティ・サーガ本線"},
+  spidey:{c:"#D4213A", n:"スパイダーマン本編"},
+  legacy:{c:"#9B6BE8", n:"過去のスパイダーマン"},
+  newav: {c:"#17A9BC", n:"ニュー・アベンジャーズ"},
+  street:{c:"#E08A2A", n:"ストリートレベル"},
+  hulk:  {c:"#78879F", n:"ハルクとダメージ・コントロール局"}
+};
+
+/* id, 表示名, 年, col, row, 重要度, 系統 */
+const N = [
+ ["im","アイアンマン",2008,0,0,"must","main"],
+ ["ih","インクレディブル・ハルク",2008,0,1,"opt","hulk"],
+ ["im2","アイアンマン2",2010,0,2,"opt","main"],
+ ["thor","マイティ・ソー",2011,0,3,"rec","main"],
+ ["ca1","キャプテン・アメリカ／ザ・ファースト・アベンジャー",2011,0,4,"rec","main"],
+ ["avg","アベンジャーズ",2012,1,2,"must","main"],
+ ["im3","アイアンマン3",2013,2,0,"opt","main"],
+ ["dw","マイティ・ソー／ダーク・ワールド",2013,2,1,"opt","main"],
+ ["ca2","キャプテン・アメリカ／ウィンター・ソルジャー",2014,2,3,"rec","main"],
+ ["gotg","ガーディアンズ・オブ・ギャラクシー",2014,2,4,"rec","main"],
+ ["aou","アベンジャーズ／エイジ・オブ・ウルトロン",2015,2,5,"rec","main"],
+ ["am","アントマン",2015,2,6,"opt","main"],
+ ["ds","ドクター・ストレンジ",2016,3,0,"must","main"],
+ ["cw","シビル・ウォー／キャプテン・アメリカ",2016,3,3,"must","main"],
+ ["gotg2","ガーディアンズ・オブ・ギャラクシー：リミックス",2017,3,5,"opt","main"],
+ ["am2","アントマン＆ワスプ",2018,3,6,"rec","main"],
+ ["rag","マイティ・ソー バトルロイヤル",2017,4,1,"rec","main"],
+ ["bp","ブラックパンサー",2018,4,2,"rec","main"],
+ ["hc","スパイダーマン：ホームカミング",2017,4,4,"must","spidey"],
+ ["capm","キャプテン・マーベル",2019,5,0,"opt","main"],
+ ["iw","アベンジャーズ／インフィニティ・ウォー",2018,5,2,"must","main"],
+ ["eg","アベンジャーズ／エンドゲーム",2019,6,2,"must","main"],
+ ["ffh","スパイダーマン：ファー・フロム・ホーム",2019,7,4,"must","spidey"],
+ ["nwh","スパイダーマン：ノー・ウェイ・ホーム",2021,8,4,"must","spidey"],
+ ["bnd","スパイダーマン：ブランド・ニュー・デイ",2026,9,4,"goal","spidey"],
+
+ ["r1","スパイダーマン（ライミ版）",2002,5,7,"rec","legacy"],
+ ["r2","スパイダーマン2",2004,6,7,"rec","legacy"],
+ ["r3","スパイダーマン3",2007,7,7,"opt","legacy"],
+ ["a1","アメイジング・スパイダーマン",2012,5,8,"rec","legacy"],
+ ["a2","アメイジング・スパイダーマン2",2014,6,8,"rec","legacy"],
+
+ ["bw","ブラック・ウィドウ",2021,3,10,"rec","newav"],
+ ["hk","ホークアイ",2021,4,10,"opt","newav"],
+ ["fws","ファルコン＆ウィンター・ソルジャー",2021,4,11,"opt","newav"],
+ ["tb","サンダーボルツ*",2025,7,10,"rec","newav"],
+
+ ["dd","Marvel デアデビル S1〜3",2015,3,12,"opt","street"],
+ ["nf3","ジェシカ・ジョーンズ／ルーク・ケイジ／アイアン・フィスト",2015,3,13,"opt","street"],
+ ["def","ザ・ディフェンダーズ",2017,4,12,"opt","street"],
+ ["pun","Marvel パニッシャー S1・2",2017,4,13,"opt","street"],
+ ["echo","エコー",2024,5,13,"opt","street"],
+ ["ba","デアデビル：ボーン・アゲイン S1・2",2025,6,12,"rec","street"],
+ ["olk","パニッシャー：ワン・ラスト・キル",2026,7,12,"rec","street"],
+
+ ["sh","シー・ハルク：ザ・アトーニー",2022,8,14,"opt","hulk"],
+ ["mm","ミズ・マーベル",2022,8,15,"opt","hulk"]
+];
+
+/* from, to, 系統 */
+const E = [
+ ["im","avg","main"],["ih","avg","main"],["im2","avg","main"],["thor","avg","main"],["ca1","avg","main"],
+ ["avg","aou","main"],["avg","iw","main"],["im3","cw","main"],["dw","rag","main"],["ca2","cw","main"],
+ ["aou","cw","main"],["am","cw","main"],["am","am2","main"],["ds","rag","main"],["ds","iw","main"],
+ ["gotg","gotg2","main"],["gotg2","iw","main"],["bp","iw","main"],["rag","iw","main"],["cw","iw","main"],
+ ["iw","eg","main"],["am2","eg","main"],["capm","eg","main"],
+ ["cw","hc","spidey"],["hc","ffh","spidey"],["eg","ffh","spidey"],["ffh","nwh","spidey"],["nwh","bnd","spidey"],
+ ["ds","nwh","legacy"],["r1","r2","legacy"],["r2","r3","legacy"],["r3","nwh","legacy"],
+ ["a1","a2","legacy"],["a2","nwh","legacy"],
+ ["bw","hk","newav"],["bw","tb","newav"],["hk","tb","newav"],["fws","tb","newav"],["ca2","fws","newav"],
+ ["am2","tb","newav"],["tb","bnd","newav"],
+ ["dd","def","street"],["dd","pun","street"],["nf3","def","street"],["def","ba","street"],["pun","ba","street"],
+ ["hk","echo","street"],["echo","ba","street"],["ba","olk","street"],["olk","bnd","street"],
+ ["iw","sh","hulk"],["sh","bnd","hulk"],["hc","mm","hulk"],["mm","bnd","hulk"],["ih","iw","hulk"]
+];
+
+const PAD=26, CW=244, RH=88, NW=210, NH=60;
+const stage=document.getElementById("stage");
+const pos={}, tier={};
+const maxCol=Math.max(...N.map(n=>n[3])), maxRow=Math.max(...N.map(n=>n[4]));
+stage.style.width =(PAD*2+(maxCol+1)*CW)+"px";
+stage.style.height=(PAD*2+(maxRow+1)*RH)+"px";
+
+const svgNS="http://www.w3.org/2000/svg";
+const svg=document.createElementNS(svgNS,"svg");
+svg.setAttribute("class","edges");
+svg.setAttribute("width",stage.style.width); svg.setAttribute("height",stage.style.height);
+const defs=document.createElementNS(svgNS,"defs");
+Object.entries(LINES).forEach(([k,v])=>{
+  const m=document.createElementNS(svgNS,"marker");
+  m.setAttribute("id","ar-"+k); m.setAttribute("viewBox","0 0 8 8"); m.setAttribute("refX","7");
+  m.setAttribute("refY","4"); m.setAttribute("markerWidth","6"); m.setAttribute("markerHeight","6");
+  m.setAttribute("orient","auto-start-reverse");
+  const p=document.createElementNS(svgNS,"path");
+  p.setAttribute("d","M0 0 L8 4 L0 8 z"); p.setAttribute("fill",v.c);
+  m.appendChild(p); defs.appendChild(m);
+});
+svg.appendChild(defs); stage.appendChild(svg);
+
+N.forEach(([id,t,y,c,r,lv,ln])=>{
+  const x=PAD+c*CW, yy=PAD+r*RH;
+  pos[id]={x,y:yy,c,r}; tier[id]=lv;
+  const d=document.createElement("div");
+  d.className="card"+(lv==="opt"?" opt":"")+(lv==="goal"?" goal":"");
+  d.id="c-"+id; d.dataset.id=id; d.dataset.lv=lv;
+  d.style.left=x+"px"; d.style.top=yy+"px"; d.style.width=NW+"px";
+  if(lv!=="goal") d.style.borderLeftColor=LINES[ln].c;
+  const label = lv==="goal" ? "ゴール" : lv==="must" ? "必須" : lv==="rec" ? "推奨" : "任意";
+  const cls   = lv==="goal" ? "must" : lv;
+  d.innerHTML='<div class="t">『'+t+'』</div><div class="m"><span class="y">'+y+
+              '</span><span class="tier '+cls+'">'+label+'</span></div>';
+  stage.appendChild(d);
+});
+
+/* --- edges: orthogonal routing through the gutter under the source row --- */
+const bucket={};
+E.forEach(([f,t,ln],i)=>{
+  const a=pos[f], b=pos[t];
+  const ah=document.getElementById("c-"+f).offsetHeight;
+  const bh=document.getElementById("c-"+t).offsetHeight;
+  const x1=a.x+NW, y1=a.y+ah/2, x2=b.x, y2=b.y+bh/2;
+  let d;
+  if(b.c-a.c===1 && Math.abs(y1-y2)<1){ d="M"+x1+" "+y1+" H"+x2; }
+  else if(b.c-a.c===1){
+    const mx=x1+(x2-x1)/2;
+    d="M"+x1+" "+y1+" H"+mx+" V"+y2+" H"+x2;
+  } else {
+    const key=a.r+"|"+a.c; bucket[key]=(bucket[key]||0)+1;
+    const gy=PAD+a.r*RH+NH+12+(bucket[key]%4)*5;
+    const drop=x2-18-(bucket[key]%3)*5;
+    d="M"+x1+" "+y1+" H"+(x1+14)+" V"+gy+" H"+drop+" V"+y2+" H"+x2;
+  }
+  const p=document.createElementNS(svgNS,"path");
+  p.setAttribute("d",d); p.setAttribute("stroke",LINES[ln].c);
+  p.setAttribute("marker-end","url(#ar-"+ln+")");
+  if(tier[f]==="opt"||tier[t]==="opt") p.setAttribute("stroke-dasharray","5 4");
+  p.dataset.f=f; p.dataset.t=t;
+  svg.appendChild(p);
+});
+
+/* --- hover highlight --- */
+const paths=[...svg.querySelectorAll("path")];
+document.querySelectorAll(".card").forEach(card=>{
+  card.addEventListener("mouseenter",()=>{
+    const id=card.dataset.id; const near=new Set([id]);
+    paths.forEach(p=>{
+      const hit=p.dataset.f===id||p.dataset.t===id;
+      p.classList.toggle("on",hit);
+      if(hit){near.add(p.dataset.f);near.add(p.dataset.t);}
+    });
+    document.querySelectorAll(".card").forEach(c=>c.classList.toggle("on",near.has(c.dataset.id)));
+    document.body.classList.add("dimming");
+  });
+  card.addEventListener("mouseleave",()=>{
+    document.body.classList.remove("dimming");
+    paths.forEach(p=>p.classList.remove("on"));
+    document.querySelectorAll(".card").forEach(c=>c.classList.remove("on"));
+  });
+});
+
+/* --- legend --- */
+document.getElementById("lines").innerHTML=Object.values(LINES)
+  .map(v=>'<span><i style="background:'+v.c+'"></i>'+v.n+"</span>").join("");
+
+/* --- filter --- */
+const RANK={must:0,rec:1,opt:2,goal:0};
+function filter(max){
+  document.querySelectorAll(".card").forEach(c=>c.classList.toggle("faded",RANK[c.dataset.lv]>max));
+  paths.forEach(p=>{
+    const off=RANK[tier[p.dataset.f]]>max||RANK[tier[p.dataset.t]]>max;
+    p.style.opacity=off?".08":"";
+  });
+}
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true"); filter(RANK[b.dataset.lv]);
+}));
+
+/* --- zoom & pan --- */
+const vp=document.getElementById("vp"), sw=document.getElementById("sw");
+let z=.55;
+function apply(){
+  sw.style.transform="scale("+z+")";
+  sw.style.width =(parseFloat(stage.style.width)*z)+"px";
+  sw.style.height=(parseFloat(stage.style.height)*z)+"px";
+  document.getElementById("pct").textContent=Math.round(z*100)+"%";
+}
+function fit(){ z=Math.min(1,(vp.clientWidth-8)/parseFloat(stage.style.width)); apply(); }
+const ZMIN=.2, ZMAX=1.6;
+document.getElementById("in").onclick =()=>{z=Math.min(ZMAX,z+.1);apply();};
+document.getElementById("out").onclick=()=>{z=Math.max(ZMIN,z-.1);apply();};
+document.getElementById("fit").onclick=fit;
+
+/* ホイール：カーソル位置を中心に、細かい刻みで拡大縮小 */
+vp.addEventListener("wheel",e=>{
+  e.preventDefault();
+  const dy = e.deltaMode===1 ? e.deltaY*16 : e.deltaMode===2 ? e.deltaY*400 : e.deltaY;
+  const r=vp.getBoundingClientRect();
+  const cx=e.clientX-r.left, cy=e.clientY-r.top;
+  const px=(vp.scrollLeft+cx)/z, py=(vp.scrollTop+cy)/z;
+  z=Math.min(ZMAX,Math.max(ZMIN,z*Math.exp(-dy*0.0012)));
+  apply();
+  vp.scrollLeft=px*z-cx;
+  vp.scrollTop =py*z-cy;
+},{passive:false});
+vp.style.height=Math.min(720,Math.max(420,window.innerHeight-260))+"px";
+fit();
+
+let dragging=false,sx,sy,sl,st;
+vp.addEventListener("pointerdown",e=>{
+  if(e.target.closest(".card"))return;
+  dragging=true;vp.classList.add("drag");sx=e.clientX;sy=e.clientY;sl=vp.scrollLeft;st=vp.scrollTop;
+  vp.setPointerCapture(e.pointerId);
+});
+vp.addEventListener("pointermove",e=>{
+  if(!dragging)return; vp.scrollLeft=sl-(e.clientX-sx); vp.scrollTop=st-(e.clientY-sy);
+});
+["pointerup","pointercancel"].forEach(ev=>vp.addEventListener(ev,()=>{dragging=false;vp.classList.remove("drag")}));
+</script>
